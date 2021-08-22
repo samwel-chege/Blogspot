@@ -82,3 +82,6 @@ Give a ⭐️ if you like this project!
 ## 📝 License
 
 This project is [MIT](LICENCE) licensed.
+
+
+Copyright &copy; 2021 Samwel Chege

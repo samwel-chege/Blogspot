@@ -1,9 +1,11 @@
 from flask import Flask
-from config import DevConfig
+from config import config_options
+
+def create_app(config_name):
 
 #Initializing the application
-app = Flask(__name__)
+    app = Flask(__name__)
 
 
-app.config.from_object(DevConfig)
-from app import views
+    app.config.from_object(config_options[config_name])
+    from app import views

@@ -1,1 +1,3 @@
+
+export SECRET_KEY=withoutthisyouwillgetatypeerror:key
 python3 manage.py server

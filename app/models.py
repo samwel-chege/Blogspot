@@ -57,4 +57,10 @@ class Comments(db.Model):
             return comments
 
     def __repr__(self):
-        return f'COMMENT  {self.comment}'        
+        return f'COMMENT  {self.comment}'    
+
+class Quote:
+    def __init__(self,author,id,quote):
+        self.author = author
+        self.id = id
+        self.quote = quote           

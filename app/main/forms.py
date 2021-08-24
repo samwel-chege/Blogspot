@@ -8,7 +8,7 @@ class UpdateProfile(FlaskForm):
 
 class PostForm(FlaskForm):
     title = StringField("Post Title", validators = [Required()])
-    category = StringField("Which category are you submitting to?",validators=[Required()])
+    short_description = StringField("Give a short decription of your post",validators = [Required()])
     post_content = TextAreaField('Post Content' )
     submit = SubmitField('Submit')
 

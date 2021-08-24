@@ -23,6 +23,11 @@ class User(UserMixin,db.Model) :
         db.session.add(self)
         db.session.commit()
 
+    @classmethod
+    def get_user(cls,id):
+        user = User.query.filter_by(id=id).order_by(User.id.desc())  
+        return user  
+
     @property
     def password(self):
         raise AttributeError('You cannot read the password attribute')   
@@ -45,6 +50,7 @@ class Comments(db.Model):
     comment = db.Column(db.String(255))  
     posted = db.Column(db.DateTime,default=datetime.utcnow)
     author_id = db.Column(db.Integer,db.ForeignKey('users.id'))
+    post_id = db.Column(db.Integer, db.ForeignKey("posts.id"))
     
 
     def save_comment(self):
@@ -57,7 +63,40 @@ class Comments(db.Model):
             return comments
 
     def __repr__(self):
-        return f'COMMENT  {self.comment}'    
+        return f'COMMENT  {self.comment}'  
+
+class Post(db.Model):
+        __tablename__ = 'posts'
+        id = db.Column(db.Integer,primary_key = True)
+        title = db.Column(db.String())
+        post_content = db.Column(db.String())
+        short_description = db.Column(db.String())
+        posted = db.Column(db.DateTime,default=datetime.utcnow)
+        post_pic_path = db.Column(db.String())
+        author_id = db.Column(db.Integer,db.ForeignKey("users.id"))
+        comments = db.relationship("Comments", backref ='user', lazy = "dynamic")
+
+        def save_post(self):
+                db.session.add(self)
+                db.session.commit()
+
+        @classmethod
+        def get_user_post(cls,id):
+                user_posts = Post.query.filter_by(author_id = id).order_by(Post.posted.desc())
+                return user_posts
+
+        @classmethod
+        def get_posts(cls):
+                all_posts = Post.query.order_by(Post.posted.desc())
+                return all_posts
+
+        @classmethod
+        def get_post(cls,id):
+                post= Post.query.filter_by(id = id).first() 
+                return post
+
+        def __repr__(self):
+                return f"POST {self.title}"
 
 class Quote:
     def __init__(self,author,id,quote):

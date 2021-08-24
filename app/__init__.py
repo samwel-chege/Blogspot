@@ -28,7 +28,7 @@ def create_app(config_name):
     mail.init_app(app)
 
     #configure UploadSet
-    configure_uploads(app,photos)
+    # configure_uploads(app,photos)
 
     #Registering the blueprint
     from .main import main as main_blueprint

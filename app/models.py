@@ -98,6 +98,17 @@ class Post(db.Model):
         def __repr__(self):
                 return f"POST {self.title}"
 
+
+class MailList(db.Model):
+    __tablename__ = "maillist"
+    
+    id = db.Column(db.Integer,primary_key =True)
+    email = db.Column(db.String) 
+
+    def save_mail(self):
+        db.session.add(self)
+        db.session.commit()                
+
 class Quote:
     def __init__(self,author,id,quote):
         self.author = author

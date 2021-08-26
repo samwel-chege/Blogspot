@@ -9,20 +9,20 @@
             <div class="col-md-8">
                 <h2 class="text-center">SignUp</h2>
                 <form action="" method="post" enctype="multipart/form-data">
-                    {{signup_form.hidden_tag()}}
-                    {{signup_form.email.label}}<br>
-                    {{signup_form.email(class = "form-control")}}<br>
-                    {{signup_form.username.label}}<br>
-                    {{signup_form.username(class = "form-control")}}<br>
-                    {{signup_form.password.label}}<br>
-                    {{signup_form.password(class = "form-control")}}<br>
-                    {{signup_form.password_confirm.label}}<br>
-                    {{signup_form.password_confirm(class = "form-control")}}<br>
-                    {{signup_form.bio.label}}<br>
-                    {{signup_form.bio(class = "form-control")}}<br>
+                    {{registration_form.hidden_tag()}}
+                    {{registration_form.email.label}}<br>
+                    {{registration_form.email(class = "form-control")}}<br>
+                    {{registration_form.username.label}}<br>
+                    {{registration_form.username(class = "form-control")}}<br>
+                    {{registration_form.password.label}}<br>
+                    {{registration_form.password(class = "form-control")}}<br>
+                    {{registration_form.password_confirm.label}}<br>
+                    {{registration_form.password_confirm(class = "form-control")}}<br>
+                    {{registration_form.bio.label}}<br>
+                    {{registration_form.bio(class = "form-control")}}<br>
                     <label for="photo">Profile Photo</label>
                     <input type="file" name="photo" class="form-control" required><br>
-                    {{signup_form.submit(class = "btn")}}
+                    {{registration_form.submit(class = "btn")}}
                 </form>
             </div>
             <div class="col-md-2"></div>

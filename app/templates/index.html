@@ -13,7 +13,7 @@
   <div id="myCarousel" class="carousel slide" data-ride="carousel">
     <div class="carousel-inner">
       <div class="item active">
-        <img src="{{url_for('static',filename='images/dev.jpg')}}" alt="..." class="img-responsive">
+        <img src="{{url_for('static',filename='images/img1.jpg')}}" alt="..." class="img-responsive">
         <div class="carousel-caption">
           <p>{{quotes[0].quote}}</p>
         </div>
@@ -22,7 +22,7 @@
       {% if quote.quote == quotes[0].quote %}
       {% else %}
       <div class="item">
-        <img src="{{url_for('static',filename='images/dev.jpg')}}" alt="..." class="img-responsive">
+        <img src="{{url_for('static',filename='images/img2.jpg')}}" alt="..." class="img-responsive">
         <div class="carousel-caption">
           {{quote.quote}}
         </div>

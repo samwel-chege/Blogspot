@@ -18,6 +18,7 @@ class User(UserMixin,db.Model) :
     profile_pic_path = db.Column(db.String())
     comments = db.relationship('Comments', backref = 'author',lazy ="dynamic")
     pass_secure = db.Column(db.String(255))
+    posts = db.relationship('Post',backref = 'author',lazy = "dynamic")
 
     def save_user(self):
         db.session.add(self)
@@ -47,7 +48,7 @@ class User(UserMixin,db.Model) :
 class Comments(db.Model):
     __tablename__ = 'comments' 
     id = db.Column(db.Integer,primary_key = True)  
-    comment = db.Column(db.String(255))  
+    comment_content = db.Column(db.String(255))  
     posted = db.Column(db.DateTime,default=datetime.utcnow)
     author_id = db.Column(db.Integer,db.ForeignKey('users.id'))
     post_id = db.Column(db.Integer, db.ForeignKey("posts.id"))
@@ -59,11 +60,16 @@ class Comments(db.Model):
 
     @classmethod
     def get_comments(cls,id):
-            comments = Comments.query.filter_by(pitch_id=id).all()
-            return comments
+            all_comments = Comments.query.filter_by(post_id=id).order_by(Comments.posted.desc())
+            return all_comments
+
+    @classmethod
+    def get_comment(cls,id):
+        comment= Comments.query.filter_by(id = id).first() 
+        return comment        
 
     def __repr__(self):
-        return f'COMMENT  {self.comment}'  
+        return f'COMMENT  {self.comment_content}'  
 
 class Post(db.Model):
         __tablename__ = 'posts'

@@ -16,11 +16,12 @@ Flask-SQLAlchemy==2.2
 Flask-Uploads==0.2.1
 Flask-WTF==0.15.1
 greenlet==1.1.1
+gunicorn==20.1.0
 idna==3.2
 itsdangerous==1.1.0
 Jinja2==2.11.3
 Mako==1.1.5
-markdown2==2.4.1
+markdown2==2.3.9
 MarkupSafe==2.0.1
 psycopg2==2.9.1
 python-dateutil==2.8.2

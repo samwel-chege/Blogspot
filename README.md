@@ -34,7 +34,7 @@ As a user I would like to;
 
 ## Live Demo
 
-[Live Demo Link]( )
+[Live Demo Link](https://tech-blogspot.herokuapp.com/ )
 
 
 ### Installation Process

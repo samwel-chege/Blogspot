@@ -1,6 +1,9 @@
 from flask_wtf import FlaskForm
 from wtforms import TextAreaField,SubmitField,StringField
 from wtforms.validators import Email, Required
+from flask_uploads import UploadSet, IMAGES
+
+images = UploadSet('photos', IMAGES)
 
 class UpdateProfile(FlaskForm):
     bio = TextAreaField('Tell us about you.',validators = [Required()])

@@ -1,4 +1,4 @@
-## QUOTED 
+## BLOGSPOT
 
 ### Description
 > A personal blogging website where you can create and share your opinions and other users can read and comment on them. Additionally, add a feature that displays random quotes to inspire your users.
@@ -42,7 +42,7 @@ As a user I would like to;
 - Clone the repository using the link below
 
 ```
-$ git clone https://github.com/samwel-chege/Quoted.git
+$ git clone https://github.com/samwel-chege/Blogspot.git
 
 ```
 

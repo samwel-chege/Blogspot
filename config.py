@@ -5,6 +5,7 @@ class Config:
     SECRET_KEY = os.environ.get('SECRET_KEY')
     SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://sammie:samm@localhost/blog'
     QUOTE_API_BASE_URL ='http://quotes.stormconsultancy.co.uk/quotes.json'
+    UPLOADED_PHOTOS_DEST ='app/static/photos'
     SIMPLEMDE_JS_IIFE = True
     SIMPLEMDE_USE_CDN = True
     
